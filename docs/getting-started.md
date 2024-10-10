@@ -110,59 +110,7 @@ and pull the image with:
     ```
 
 The `mkdocs` executable is provided as an entry point and `serve` is the
-default command. If you're not familiar with Docker don't worry, we have you
-covered in the following sections.
-
-The following plugins are bundled with the Docker image:
-
-- [mkdocs-minify-plugin]
-- [mkdocs-redirects]
-
-  [Docker image]: https://hub.docker.com/r/squidfunk/mkdocs-material/
-  [mkdocs-minify-plugin]: https://github.com/byrnereese/mkdocs-minify-plugin
-  [mkdocs-redirects]: https://github.com/datarobot/mkdocs-redirects
-
-??? question "How to add plugins to the Docker image?"
-
-    Material for MkDocs only bundles selected plugins in order to keep the size
-    of the official image small. If the plugin you want to use is not included,
-    you can add them easily:
-
-    === "Material for MkDocs"
-
-        Create a `Dockerfile` and extend the official image:
-
-        ``` Dockerfile title="Dockerfile"
-        FROM squidfunk/mkdocs-material
-        RUN pip install mkdocs-macros-plugin
-        RUN pip install mkdocs-glightbox
-        ```
-
-    === "Insiders"
-
-        Clone or fork the Insiders repository, and create a file called
-        `user-requirements.txt` in the root of the repository. Then, add the
-        plugins that should be installed to the file, e.g.:
-
-        ``` txt title="user-requirements.txt"
-        mkdocs-macros-plugin
-        mkdocs-glightbox
-        ```
-
-    Next, build the image with the following command:
-
-    ```
-    docker build -t squidfunk/mkdocs-material .
-    ```
-
-    The new image will have additional packages installed and can be used
-    exactly like the official image.
-
-### with git
-
-Material for MkDocs can be directly used from [GitHub] by cloning the
-repository into a subfolder of your project root which might be useful if you
-want to use the very latest version:
+default 
 
 ```
 git clone https://github.com/squidfunk/mkdocs-material.git
